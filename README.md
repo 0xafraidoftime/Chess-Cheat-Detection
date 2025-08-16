@@ -47,8 +47,8 @@ This project addresses the growing concern of chess cheating in online platforms
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/your-username/chess-cheat-detection.git
-cd chess-cheat-detection
+git clone https://github.com/0xafraidoftime/Chess-Cheat-Detection.git
+cd Chess-Cheat-Detection
 ```
 
 2. **Install required dependencies**
@@ -185,3 +185,4 @@ Email: 2022AC05327@wilp.bits-pilani.ac.in
 ---
 
 *This project aims to maintain competitive integrity in chess while providing transparent, objective methods for cheat detection that can assist tournament arbiters and online platforms.*
+

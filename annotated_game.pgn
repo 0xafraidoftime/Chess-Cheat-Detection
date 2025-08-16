@@ -1,0 +1,21 @@
+[Event "Casual blitz game"]
+[Site "https://lichess.org/3LYjM5Nh"]
+[Date "2025.01.05"]
+[White "ogryuy"]
+[Black "it_gets_better"]
+[Result "0-1"]
+[WhiteElo "1236"]
+[BlackElo "1288"]
+[TimeControl "300+0"]
+[Termination "Time forfeit"]
+[GameId "3LYjM5Nh"]
+[Variant "Standard"]
+[ECO "D02"]
+[Opening "Queen's Pawn Game: Chigorin Variation"]
+[Annotator "https://lichess.org/@/it_gets_better"]
+[StudyName "Game study"]
+[ChapterName "ogryuy (1236) - it_gets_better (1288?)"]
+
+1. d4 { [%clk 0:05:00] } 1... d5 { [%clk 0:05:00] } 2. Nf3 { [%clk 0:05:00] } 2... Nc6 { [%clk 0:04:58] } 3. e3 { [%clk 0:05:00] } 3... Bg4 { [%clk 0:04:56] } 4. Be2 { [%clk 0:04:55] } 4... Nf6 { [%clk 0:04:54] } 5. h3 { [%clk 0:04:53] } 5... Bxf3 { [%clk 0:04:53] } 6. gxf3 { [%clk 0:04:49] } 6... e6 { [%clk 0:04:52] } 7. b3 { [%clk 0:04:20] } 7... Bb4+ { [%clk 0:04:49] } 8. Kf1 { [%clk 0:04:18] } 8... O-O { [%clk 0:04:46] } 9. Bb2 { [%clk 0:04:15] } 9... Re8 { [%clk 0:04:39] } 10. Nd2 { [%clk 0:04:04] } 10... e5 { [%clk 0:04:36] } 11. dxe5 { [%clk 0:03:54] } 11... Nxe5 { [%clk 0:04:33] } 12. c3 { [%clk 0:03:40] } 12... Bd6 { [%clk 0:04:31] } 13. f4 { [%clk 0:03:31] } 13... Nc6 { [%clk 0:04:23] } 14. Rg1 { [%clk 0:03:22] } 14... Ne4 { [%clk 0:04:21] } 15. Nxe4 { [%clk 0:03:16] } 15... dxe4 { [%clk 0:04:19] } 16. c4 { [%clk 0:03:08] } 16... f6 { [%clk 0:04:16] } 17. Qd5+ { [%clk 0:02:58] } 17... Kf8 { [%clk 0:04:13] } 18. Qh5 { [%clk 0:02:35] } 18... h6 { [%clk 0:03:53] } 19. Rd1 { [%clk 0:02:17] } 19... Nb4 { [%clk 0:03:37] } 20. Qg6 { [%clk 0:01:33] } 20... Qe7 { [%clk 0:03:22] } 21. Ba3 { [%clk 0:01:07] } 21... Nxa2 { [%clk 0:03:11] } 22. c5 { [%clk 0:00:50] } 22... Nc3 { [%clk 0:03:01] } 23. cxd6 { [%clk 0:00:48] } 23... cxd6 { [%clk 0:02:58] } 24. Bxd6 { [%clk 0:00:46] } 24... Nxd1 { [%clk 0:02:49] } 25. Bxe7+ { [%clk 0:00:45] } 25... Rxe7 { [%clk 0:02:48] } 26. Bxd1 { [%clk 0:00:40] } 26... Rd8 { [%clk 0:02:45] } 27. Bh5 { [%clk 0:00:17] } 27... Rc8 { [%clk 0:02:36] } 28. Kg2 { [%clk 0:00:14] } 28... Rc6 { [%clk 0:02:16] } 29. Qh7 { [%clk 0:00:12] } 29... Rf7 { [%clk 0:02:00] } 30. Qh8+ { [%clk 0:00:10] } 30... Ke7 { [%clk 0:01:59] } 31. Bxf7 { [%clk 0:00:07] } 31... Kxf7 { [%clk 0:01:58] } 32. Kh2 { [%clk 0:00:06] } 32... Ke6 { [%clk 0:01:45] } 33. Qxg7 { [%clk 0:00:04] } 33... Rc2 { [%clk 0:01:40] } 34. Qg8+ { [%clk 0:00:01] } 34... Kf5 { 0-1 Black wins on time. } { ok } { [%clk 0:01:37] } 0-1
+
+

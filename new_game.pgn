@@ -1,0 +1,19 @@
+[Event "Live Chess"]
+[Site "Chess.com"]
+[Date "2024.12.22"]
+[Round "?"]
+[White "Manan_Pahwa13"]
+[Black "can_you_guess_my_elo"]
+[Result "1-0"]
+[TimeControl "600"]
+[WhiteElo "1390"]
+[BlackElo "400"]
+[Termination "Manan_Pahwa13 won by checkmate"]
+[ECO "C28"]
+[EndTime "23:13:16 PST"]
+[Link "https://www.chess.com/game/live/128676212155"]
+
+1. e4 e5 2. Nc3 d6 3. Bc4 Nf6 4. d3 Nc6 5. Bg5 Be7 6. Nf3 Nd4 7. Nxd4 exd4 8.
+Ne2 c5 9. c3 O-O 10. cxd4 cxd4 11. Nxd4 h6 12. Be3 b6 13. Nc6 Bb7 14. Nd4 Bc8
+15. Nc6 Qd7 16. Nxe7+ Qxe7 17. Qf3 g5 18. O-O-O Be6 19. Kb1 Bxc4 20. dxc4 Qxe4+
+21. Qxe4 Nxe4 22. f3 Nc5 23. Rxd6 Kg7 24. Bd4+ Kg8 25. Rxh6 Rad8 26. Rh8# 1-0

@@ -1,154 +1,187 @@
-<div align="center">
+# Chess Cheat Detection: Analyzing PGN Files
 
-  [![Stockfish][stockfish128-logo]][website-link]
+An automated framework for detecting potential cheating in chess games through statistical analysis of Portable Game Notation (PGN) files, developed as part of an MTech dissertation in AI & ML at BITS Pilani.
 
-  <h3>Stockfish</h3>
+## Project Overview
 
-  A free and strong UCI chess engine.
-  <br>
-  <strong>[Explore Stockfish docs »][wiki-link]</strong>
-  <br>
-  <br>
-  [Report bug][issue-link]
-  ·
-  [Open a discussion][discussions-link]
-  ·
-  [Discord][discord-link]
-  ·
-  [Blog][website-blog-link]
+This project addresses the growing concern of chess cheating in online platforms by analyzing gameplay patterns using centipawn loss (CPL) metrics and machine learning techniques. The system identifies statistical anomalies that may indicate computer assistance during gameplay.
 
-  [![Build][build-badge]][build-link]
-  [![License][license-badge]][license-link]
-  <br>
-  [![Release][release-badge]][release-link]
-  [![Commits][commits-badge]][commits-link]
-  <br>
-  [![Website][website-badge]][website-link]
-  [![Fishtest][fishtest-badge]][fishtest-link]
-  [![Discord][discord-badge]][discord-link]
+## Key Features
 
-</div>
+- **PGN File Analysis**: Parse and analyze chess games in standard PGN format
+- **Centipawn Loss Calculation**: Evaluate move quality against optimal engine recommendations
+- **Statistical Pattern Detection**: Identify suspicious gameplay patterns and anomalies
+- **Data Visualization**: Generate comprehensive graphs and charts for pattern analysis
+- **Machine Learning Classification**: 95% accuracy achieved using Neural Network models
+- **Multi-factor Analysis**: Consider game length, move timing, and contextual factors
 
-## Overview
+## Technologies Used
 
-[Stockfish][website-link] is a **free and strong UCI chess engine** derived from
-Glaurung 2.1 that analyzes chess positions and computes the optimal moves.
+- **Python 3.x**
+- **Chess Libraries**: `python-chess`, `chess.pgn`
+- **Engine Analysis**: Stockfish 16 (depth 20)
+- **Data Processing**: `pandas`, `numpy`
+- **Visualization**: `matplotlib`, `seaborn`
+- **Machine Learning**: `scikit-learn`, `tensorflow`
 
-Stockfish **does not include a graphical user interface** (GUI) that is required
-to display a chessboard and to make it easy to input moves. These GUIs are
-developed independently from Stockfish and are available online. **Read the
-documentation for your GUI** of choice for information about how to use
-Stockfish with it.
+## Detection Methodology
 
-See also the Stockfish [documentation][wiki-usage-link] for further usage help.
+### Primary Indicators
+- Consistently low CPL across complex positions
+- Unnatural CPL stability throughout games
+- High alignment with top engine choices in critical positions
+- Performance incongruent with player rating
 
-## Files
+### Secondary Indicators
+- Unusual game length patterns
+- Inconsistent time usage patterns
+- Performance spikes in specific periods
+- Drastic improvement without corresponding rating increase
 
-This distribution of Stockfish consists of the following files:
+### Classification Confidence Levels
+- **Low Confidence**: Only secondary indicators present
+- **Medium Confidence**: One primary + multiple secondary indicators
+- **High Confidence**: Multiple primary indicators present
 
-  * [README.md][readme-link], the file you are currently reading.
+## Installation & Setup
 
-  * [Copying.txt][license-link], a text file containing the GNU General Public
-    License version 3.
+1. **Clone the repository**
+```bash
+git clone https://github.com/your-username/chess-cheat-detection.git
+cd chess-cheat-detection
+```
 
-  * [AUTHORS][authors-link], a text file with the list of authors for the project.
+2. **Install required dependencies**
+```bash
+pip install python-chess pandas matplotlib seaborn scikit-learn tensorflow stockfish
+```
 
-  * [src][src-link], a subdirectory containing the full source code, including a
-    Makefile that can be used to compile Stockfish on Unix-like systems.
+3. **Download Stockfish Engine**
+- Download Stockfish 16 from [official website](https://stockfishchess.org/)
+- Ensure it's accessible in your system PATH
 
-  * a file with the .nnue extension, storing the neural network for the NNUE
-    evaluation. Binary distributions will have this file embedded.
+## Project Structure
+
+```
+chess-cheat-detection/
+├── chess_engine.py          # Basic PGN parsing functionality
+├── chess_engine2.py         # Enhanced analysis with CPL extraction
+├── CPL plot.py             # Visualization and plotting utilities
+├── engine3.py              # Additional analysis features
+├── game length distribution.py  # Game length analysis
+├── data/
+│   ├── a.pgn               # Sample PGN files
+│   ├── game.pgn
+│   ├── new_game.pgn
+│   └── annotated_game2.pgn
+├── analysis/
+│   ├── *.csv               # Generated analysis results
+│   └── pgn_analysis.csv    # Summary statistics
+└── README.md
+```
+
+## Usage
+
+### Basic PGN Analysis
+```python
+from chess_engine import parse_pgn
+
+# Parse a PGN file
+moves = parse_pgn("your_game.pgn")
+print("Extracted moves:", moves)
+```
+
+### Centipawn Loss Analysis
+```python
+# Run CPL analysis and generate visualizations
+python "CPL plot.py"
+```
+
+### Game Length Distribution
+```python
+# Analyze game length patterns
+python "game length distribution.py"
+```
+
+### Cheat Detection
+```python
+from chess_engine2 import analyze_game
+
+# Analyze a game for potential cheating
+analyze_game("suspicious_game.pgn")
+```
+
+## Performance Metrics
+
+| Algorithm | Accuracy | Precision | Recall | F1-Score |
+|-----------|----------|-----------|---------|----------|
+| Decision Tree | 85% | 88% | 83% | 85% |
+| Random Forest | 92% | 90% | 93% | 91% |
+| **Neural Network** | **95%** | **94%** | **96%** | **95%** |
+
+## Key Findings
+
+- **CPL Analysis**: Effectively differentiates fair from engine-assisted play
+- **Game Context**: Complexity, phase, and time control are crucial for accurate detection
+- **Multi-factorial Approach**: Reduces false positives significantly
+- **Pattern Recognition**: Identifies bimodal distribution in game lengths for suspicious accounts
+
+## Limitations
+
+- Requires annotated PGN files or Stockfish integration for evaluation
+- May not detect sophisticated cheating (intentional suboptimal moves)
+- Dataset size impacts ML model accuracy
+- Computational intensity for real-time analysis
+- Potential false positives with very strong human players
+
+## Future Enhancements
+
+### Technical Improvements
+- Real-time analysis capability for tournament monitoring
+- Cloud-based implementation for scalability
+- Mobile application for arbiters and tournament directors
+- Integration with chess platform APIs
+
+### Research Extensions
+- Advanced neural network architectures (LSTM, Transformer)
+- Incorporation of psychological factors and playing style analysis
+- Application to other strategic games (Go, Shogi)
+- Self-improving detection through continuous learning
+
+## Research Background
+
+This project was developed as part of an MTech dissertation in AI & ML at BITS Pilani under the supervision of Milin Shah (VP & Technology Manager, Bank of America). The research addresses the increasing prevalence of chess cheating in online environments, particularly since 2020.
 
 ## Contributing
 
-__See [Contributing Guide](CONTRIBUTING.md).__
+Contributions are welcome! Please feel free to submit issues, feature requests, or pull requests to improve the detection algorithms and expand the project's capabilities.
 
-### Donating hardware
+## Citation
 
-Improving Stockfish requires a massive amount of testing. You can donate your
-hardware resources by installing the [Fishtest Worker][worker-link] and viewing
-the current tests on [Fishtest][fishtest-link].
-
-### Improving the code
-
-In the [chessprogramming wiki][programming-link], many techniques used in
-Stockfish are explained with a lot of background information.
-The [section on Stockfish][programmingsf-link] describes many features
-and techniques used by Stockfish. However, it is generic rather than
-focused on Stockfish's precise implementation.
-
-The engine testing is done on [Fishtest][fishtest-link].
-If you want to help improve Stockfish, please read this [guideline][guideline-link]
-first, where the basics of Stockfish development are explained.
-
-Discussions about Stockfish take place these days mainly in the Stockfish
-[Discord server][discord-link]. This is also the best place to ask questions
-about the codebase and how to improve it.
-
-## Compiling Stockfish
-
-Stockfish has support for 32 or 64-bit CPUs, certain hardware instructions,
-big-endian machines such as Power PC, and other platforms.
-
-On Unix-like systems, it should be easy to compile Stockfish directly from the
-source code with the included Makefile in the folder `src`. In general, it is
-recommended to run `make help` to see a list of make targets with corresponding
-descriptions. An example suitable for most Intel and AMD chips:
-
+If you use this work in your research, please cite:
 ```
-cd src
-make -j profile-build ARCH=x86-64-avx2
+Pal, A. (2025). Cheat Detection in Chess: Analyzing PGN Files. 
+MTech Dissertation, BITS Pilani. Supervisor: Milin Shah.
 ```
 
-Detailed compilation instructions for all platforms can be found in our
-[documentation][wiki-compile-link]. Our wiki also has information about
-the [UCI commands][wiki-uci-link] supported by Stockfish.
+## License
 
-## Terms of use
+This project is open-source and available under the MIT License. See LICENSE file for details.
 
-Stockfish is free and distributed under the
-[**GNU General Public License version 3**][license-link] (GPL v3). Essentially,
-this means you are free to do almost exactly what you want with the program,
-including distributing it among your friends, making it available for download
-from your website, selling it (either by itself or as part of some bigger
-software package), or using it as the starting point for a software project of
-your own.
+## Acknowledgments
 
-The only real limitation is that whenever you distribute Stockfish in some way,
-you MUST always include the license and the full source code (or a pointer to
-where the source code can be found) to generate the exact binary you are
-distributing. If you make any changes to the source code, these changes must
-also be made available under GPL v3.
+- **Supervisor**: Milin Shah, Bank of America
+- **Institution**: BITS Pilani Department of AI & ML
+- **Chess Community Contributors**: Manan Pahwa (Purdue University), Moin Memon (Bank of America)
+- **Technical Support**: Stockfish Development Team, Python-chess Library Contributors
+- **Data Sources**: Chess.com Research Dataset, Lichess Open Database
 
+## Contact
 
-[authors-link]:       https://github.com/official-stockfish/Stockfish/blob/master/AUTHORS
-[build-link]:         https://github.com/official-stockfish/Stockfish/actions/workflows/stockfish.yml
-[commits-link]:       https://github.com/official-stockfish/Stockfish/commits/master
-[discord-link]:       https://discord.gg/GWDRS3kU6R
-[issue-link]:         https://github.com/official-stockfish/Stockfish/issues/new?assignees=&labels=&template=BUG-REPORT.yml
-[discussions-link]:   https://github.com/official-stockfish/Stockfish/discussions/new
-[fishtest-link]:      https://tests.stockfishchess.org/tests
-[guideline-link]:     https://github.com/official-stockfish/fishtest/wiki/Creating-my-first-test
-[license-link]:       https://github.com/official-stockfish/Stockfish/blob/master/Copying.txt
-[programming-link]:   https://www.chessprogramming.org/Main_Page
-[programmingsf-link]: https://www.chessprogramming.org/Stockfish
-[readme-link]:        https://github.com/official-stockfish/Stockfish/blob/master/README.md
-[release-link]:       https://github.com/official-stockfish/Stockfish/releases/latest
-[src-link]:           https://github.com/official-stockfish/Stockfish/tree/master/src
-[stockfish128-logo]:  https://stockfishchess.org/images/logo/icon_128x128.png
-[uci-link]:           https://backscattering.de/chess/uci/
-[website-link]:       https://stockfishchess.org
-[website-blog-link]:  https://stockfishchess.org/blog/
-[wiki-link]:          https://github.com/official-stockfish/Stockfish/wiki
-[wiki-compile-link]:  https://github.com/official-stockfish/Stockfish/wiki/Compiling-from-source
-[wiki-uci-link]:      https://github.com/official-stockfish/Stockfish/wiki/UCI-&-Commands
-[wiki-usage-link]:    https://github.com/official-stockfish/Stockfish/wiki/Download-and-usage
-[worker-link]:        https://github.com/official-stockfish/fishtest/wiki/Running-the-worker
+**Ankita Pal**  
+BITS ID: 2022AC05327  
+Email: 2022AC05327@wilp.bits-pilani.ac.in  
 
-[build-badge]:        https://img.shields.io/github/actions/workflow/status/official-stockfish/Stockfish/stockfish.yml?branch=master&style=for-the-badge&label=stockfish&logo=github
-[commits-badge]:      https://img.shields.io/github/commits-since/official-stockfish/Stockfish/latest?style=for-the-badge
-[discord-badge]:      https://img.shields.io/discord/435943710472011776?style=for-the-badge&label=discord&logo=Discord
-[fishtest-badge]:     https://img.shields.io/website?style=for-the-badge&down_color=red&down_message=Offline&label=Fishtest&up_color=success&up_message=Online&url=https%3A%2F%2Ftests.stockfishchess.org%2Ftests%2Ffinished
-[license-badge]:      https://img.shields.io/github/license/official-stockfish/Stockfish?style=for-the-badge&label=license&color=success
-[release-badge]:      https://img.shields.io/github/v/release/official-stockfish/Stockfish?style=for-the-badge&label=official%20release
-[website-badge]:      https://img.shields.io/website?style=for-the-badge&down_color=red&down_message=Offline&label=website&up_color=success&up_message=Online&url=https%3A%2F%2Fstockfishchess.org
+---
+
+*This project aims to maintain competitive integrity in chess while providing transparent, objective methods for cheat detection that can assist tournament arbiters and online platforms.*
